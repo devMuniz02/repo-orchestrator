@@ -1,0 +1,60 @@
+# For installing the latest pre-release versions of PyTorch with CUDA 13.0 support
+# --pre
+# --extra-index-url https://download.pytorch.org/whl/cu130
+
+# torch
+# torchvision
+
+# Data Science & Machine Learning
+# numpy
+# pandas
+# scikit-learn
+# matplotlib
+# seaborn
+# jupyter
+# notebook
+
+# Web Development
+# flask
+# django
+# fastapi
+# uvicorn
+# gunicorn
+
+# Testing & Quality Assurance
+# pytest
+# pytest-cov
+# black
+# flake8
+# mypy
+# pre-commit
+
+# Utilities
+# python-dotenv
+# click
+# tqdm
+# rich
+
+# Database
+# sqlalchemy
+# psycopg2-binary
+# pymongo
+
+# API Clients
+# httpx
+# aiohttp
+# python-telegram-bot
+
+# Image Processing
+# pillow
+# opencv-python
+
+# Natural Language Processing
+# transformers
+# datasets
+# tokenizers
+
+# Development Tools
+# ipython
+# jupyterlab
+# sphinx
