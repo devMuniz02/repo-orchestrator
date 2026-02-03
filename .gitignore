@@ -217,3 +217,10 @@ assets/
 data/
 docs/
 notebooks/
+
+# Empty directories
+assets/
+data/
+docs/
+notebooks/
+scripts/
