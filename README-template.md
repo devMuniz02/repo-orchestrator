@@ -1,10 +1,10 @@
-# Repo Orchestrator
+# [Project Name]
 
-> Automated project generator and repository factory. Transforms high-level ideas into structured GitHub repositories using AI agents.
+> [Brief description of the project - one or two sentences]
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/repo-orchestrator)](https://github.com/devMuniz02/repo-orchestrator/issues)
-[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/repo-orchestrator)](https://github.com/devMuniz02/repo-orchestrator/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/[repo-name])](https://github.com/devMuniz02/[repo-name]/issues)
+[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/[repo-name])](https://github.com/devMuniz02/[repo-name]/stargazers)
 
 ## 📋 Table of Contents
 
@@ -34,10 +34,10 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/devMuniz02/repo-orchestrator.git
+git clone https://github.com/devMuniz02/[repo-name].git
 
 # Navigate to the project directory
-cd repo-orchestrator
+cd [repo-name]
 
 # Install dependencies
 npm install
@@ -74,7 +74,7 @@ This script will:
 ## 📁 Project Structure
 
 ```
-repo-orchestrator/
+[repo-name]/
 ├── assets/                 # Static assets (images, icons, etc.)
 ├── data/                   # Data files and datasets
 ├── docs/                   # Documentation files
@@ -153,7 +153,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
 - **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
 
-Project Link: [https://github.com/devMuniz02/repo-orchestrator](https://github.com/devMuniz02/repo-orchestrator)
+Project Link: [https://github.com/devMuniz02/[repo-name]](https://github.com/devMuniz02/[repo-name])
 
 ---
 

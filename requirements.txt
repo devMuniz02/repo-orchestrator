@@ -49,6 +49,10 @@
 # pillow
 # opencv-python
 
+# LangChain and LLM Integration
+langchain
+langchain-openai
+
 # Natural Language Processing
 # transformers
 # datasets
