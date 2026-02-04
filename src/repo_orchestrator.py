@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-Repo Orchestrator - Cleans empty directories and fills README brackets with repository info
+Repo Orchestrator - Cleans empty directories, finds sensitive data, and fills README brackets with repository info
 """
 
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 
 
 def run_command(command: list[str], cwd: Optional[str] = None) -> Optional[str]:
@@ -106,8 +107,98 @@ def clean_repo():
         print("No empty directories found")
 
 
+def scan_sensitive_data() -> List[str]:
+    """Scan for sensitive files and data that should not be tracked by git."""
+    sensitive_files = []
+    sensitive_patterns = [
+        r'API_KEY\s*=\s*["\'][^"\']+["\']',
+        r'SECRET\s*=\s*["\'][^"\']+["\']',
+        r'PASSWORD\s*=\s*["\'][^"\']+["\']',
+        r'TOKEN\s*=\s*["\'][^"\']+["\']',
+        r'KEY\s*=\s*["\'][^"\']+["\']',
+        r'aws_access_key_id',
+        r'aws_secret_access_key',
+        r'private_key',
+        r'ssh_key',
+    ]
+    
+    # Sensitive file names
+    sensitive_file_names = [
+        '.env',
+        '.secrets',
+        'secrets.json',
+        'config.json',
+        'credentials.json',
+        'key.pem',
+        'private.pem',
+        '.pem',
+        '.key',
+    ]
+    
+    root = '.'
+    
+    for dirpath, dirnames, filenames in os.walk(root):
+        # Skip .git directory
+        if '.git' in dirpath:
+            continue
+            
+        for filename in filenames:
+            filepath = os.path.join(dirpath, filename)
+            rel_path = os.path.relpath(filepath, root)
+            
+            # Check if file name is sensitive
+            if any(sensitive_name in filename.lower() for sensitive_name in sensitive_file_names):
+                sensitive_files.append(rel_path)
+                continue
+                
+            # Check file content for sensitive patterns (only text files)
+            try:
+                if filename.endswith(('.py', '.js', '.ts', '.json', '.txt', '.md', '.yml', '.yaml', '.env', '.ini', '.cfg')):
+                    with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
+                        content = f.read()
+                        for pattern in sensitive_patterns:
+                            if re.search(pattern, content, re.IGNORECASE):
+                                sensitive_files.append(rel_path)
+                                break
+            except (UnicodeDecodeError, OSError):
+                # Skip binary files or files that can't be read
+                pass
+    
+    return list(set(sensitive_files))  # Remove duplicates
+
+
+def clean_sensitive_data(sensitive_files: List[str]):
+    """Add sensitive files to .gitignore and warn about them."""
+    if not sensitive_files:
+        print("No sensitive files or data found")
+        return
+        
+    gitignore_path = '.gitignore'
+    
+    # Check if files are already tracked by git
+    tracked_files = []
+    for file in sensitive_files:
+        result = run_command(["git", "ls-files", file])
+        if result:
+            tracked_files.append(file)
+    
+    if tracked_files:
+        print("Warning: The following sensitive files are already tracked by git:")
+        for file in tracked_files:
+            print(f"  - {file}")
+        print("Consider removing them from git history using: git rm --cached <file>")
+    
+    # Add to .gitignore
+    with open(gitignore_path, 'a') as f:
+        f.write('\n# Sensitive files and data\n')
+        for file in sensitive_files:
+            f.write(f'{file}\n')
+    
+    print(f"Added {len(sensitive_files)} sensitive files to .gitignore")
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Repo Orchestrator - Clean empty directories and fill README brackets with repository info")
+    parser = argparse.ArgumentParser(description="Repo Orchestrator - Clean empty directories, find sensitive data, and fill README brackets with repository info")
     parser.add_argument("--path", required=True, help="Local path to the target repository")
 
     args = parser.parse_args()
@@ -130,6 +221,10 @@ def main():
 
     # Clean repo
     clean_repo()
+
+    # Scan and clean sensitive data
+    sensitive_files = scan_sensitive_data()
+    clean_sensitive_data(sensitive_files)
 
     # Gather repository information
     repo_info = get_repo_info()
