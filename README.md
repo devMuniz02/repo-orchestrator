@@ -1,30 +1,59 @@
+[![ArXiv](https://img.shields.io/badge/ArXiv-2512.16841-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2512.16841)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-devmuniz-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/devmuniz)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-devMuniz02-181717?logo=github&logoColor=white)](https://github.com/devMuniz02)
+[![Portfolio](https://img.shields.io/badge/Portfolio-devmuniz02.github.io-0F172A?logo=googlechrome&logoColor=white)](https://devmuniz02.github.io/)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-manu02-FFD21E?logoColor=black)](https://huggingface.co/manu02)
+
 # Repo Orchestrator
 
 > Automated project generator and repository factory. Transforms high-level ideas into structured GitHub repositories using AI agents.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/devMuniz02/repo-orchestrator)](https://github.com/devMuniz02/repo-orchestrator/issues)
-[![GitHub stars](https://img.shields.io/github/stars/devMuniz02/repo-orchestrator)](https://github.com/devMuniz02/repo-orchestrator/stargazers)
+- [Features](#features) - [Installation](#installation) - [Repository Setup](#repository-setup) - [Usage](#usage) - [Configuration](#configuration) - [Contributing](#contributing) - [License](#license) - [Contact](#contact)
 
-## 📋 Table of Contents
+## Overview
 
-- [Features](#features)
-- [Installation](#installation)
-- [Repository Setup](#repository-setup)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+Automated project generator and repository factory. Transforms high-level ideas into structured GitHub repositories using AI agents.
 
-## ✨ Features
+## Repository Structure
+
+| Path | Description |
+| --- | --- |
+| `src/` | Primary source code for the application or library. |
+| `tests/` | Top-level project directory containing repository-specific resources. |
+| `.gitignore` | Top-level file included in the repository. |
+| `LICENSE` | Repository license information. |
+| `README.md` | Primary project documentation. |
+| `README-template.md` | Top-level file included in the repository. |
+| `requirements.txt` | Python dependency specification for local setup. |
+
+## Getting Started
+
+1. Clone the repository.
+
+   ```bash
+   git clone https://github.com/devMuniz02/repo-orchestrator.git
+   cd repo-orchestrator
+   ```
+
+2. Prepare the local environment.
+
+Install Python dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Run or inspect the project entry point.
+
+Use the project-specific scripts or notebooks in the repository root to run the workflow.
+
+## Features
 
 - [Feature 1]
 - [Feature 2]
 - [Feature 3]
 - [Add more features as needed]
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -47,7 +76,7 @@ pip install -r requirements.txt
 [other installation commands]
 ```
 
-## � Repository Setup
+## Repository Setup
 
 After cloning this template repository, run the setup script to automatically populate the README with your repository information:
 
@@ -71,7 +100,47 @@ This script will:
 
 **Note:** Make sure your repository has a remote origin set and is pushed to GitHub before running the script.
 
-## 📁 Project Structure
+## Usage
+
+### Basic Usage
+
+```bash
+# Example command
+[command example]
+```
+
+### Advanced Usage
+
+[Provide more detailed usage examples, code snippets, or screenshots]
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Links:**
+- **GitHub:** [https://github.com/devMuniz02/](https://github.com/devMuniz02/)
+- **LinkedIn:** [https://www.linkedin.com/in/devmuniz](https://www.linkedin.com/in/devmuniz)
+- **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
+- **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
+
+Project Link: [https://github.com/devMuniz02/repo-orchestrator](https://github.com/devMuniz02/repo-orchestrator)
+
+---
+
+⭐ If you find this project helpful, please give it a star!
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Repository Setup](#repository-setup)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Project Structure
 
 ```
 repo-orchestrator/
@@ -97,64 +166,6 @@ repo-orchestrator/
 - **`src/`**: Main source code for the project.
 - **`tests/`**: Unit tests, integration tests, and test-related files.
 
-## �📖 Usage
-
-### Basic Usage
-
-```bash
-# Example command
-[command example]
-```
-
-### Advanced Usage
-
-[Provide more detailed usage examples, code snippets, or screenshots]
-
-## ⚙️ Configuration
+## ️ Configuration
 
 [Explain configuration options, environment variables, config files, etc.]
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Setup
-
-```bash
-# Install development dependencies
-npm install --dev
-# or
-pip install -r requirements-dev.txt
-
-# Run tests
-npm test
-# or
-python -m pytest
-
-# Run linting
-npm run lint
-# or
-black .
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-**Links:**
-- **GitHub:** [https://github.com/devMuniz02/](https://github.com/devMuniz02/)
-- **LinkedIn:** [https://www.linkedin.com/in/devmuniz](https://www.linkedin.com/in/devmuniz)
-- **Hugging Face:** [https://huggingface.co/manu02](https://huggingface.co/manu02)
-- **Portfolio:** [https://devmuniz02.github.io/](https://devmuniz02.github.io/)
-
-Project Link: [https://github.com/devMuniz02/repo-orchestrator](https://github.com/devMuniz02/repo-orchestrator)
-
----
-
-⭐ If you find this project helpful, please give it a star!
